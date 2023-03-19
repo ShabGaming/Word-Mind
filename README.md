@@ -6,7 +6,9 @@ Github Repositary For COMP2113 Group Project: "Implementing a text-based mini-ga
   - shahab@connect.hku.hk
   - 3035961992
 
-- Bosco
+- Bosco (BASc Applied AI)
+  - bfung777@connect.hku.hk
+  - 3036059461
 
 Please go through the information down below to learn more about the project and how to get started!
 
