@@ -9,7 +9,11 @@ Github Repositary For COMP2113 Group Project: "Implementing a text-based mini-ga
 - Bosco (BASc Applied AI)
   - bfung777@connect.hku.hk
   - 3036059461
-
+  
+- Dongwoo Kang (BEng DS&E)
+  - u3602977@connect.hku.hk
+  - 3036029777
+  
 Please go through the information down below to learn more about the project and how to get started!
 
 ----
