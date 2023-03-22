@@ -18,7 +18,7 @@ Please go through the information down below to learn more about the project and
 
 ----
 ## Introduction To The Game
-Description Unavailable
+
 
 ### Game Rules
 
