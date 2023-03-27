@@ -16,7 +16,7 @@ Github Repositary For COMP2113 Group Project: "Implementing a text-based mini-ga
   
 Please go through the information down below to learn more about the project and how to get started!
 
-----
+-----
 ## Introduction To The Game
 
 
