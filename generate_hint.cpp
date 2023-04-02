@@ -11,8 +11,9 @@ What Is This Function:
 The goal of this function is to take two "5 character string inputs",
 the first being the actual word (word to guess to win the game), second
 being the word guessed by the player before using a hint. The Function
-extracts a random character from the "actual word" and returns it
-according to its relative index position.
+extracts a random character from the "actual word" and make sures it
+is not already correctly guessed in the "guessed word". Then it returns
+it according to its relative index position.
 Sample Input: APPLE MAPLE
 Sample Output: Axxxx
 Sample Input: CABLE APPLE
