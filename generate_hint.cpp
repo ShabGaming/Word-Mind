@@ -1,9 +1,23 @@
+// Importing All The Necessary Libraries
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <string>
 #include "generate_hint.h"
 using namespace std;
+
+/*
+What Is This Function:
+The goal of this function is to take two "5 character string inputs",
+the first being the actual word (word to guess to win the game), second
+being the word guessed by the player before using a hint. The Function
+extracts a random character from the "actual word" and returns it
+according to its relative index position.
+Sample Input: APPLE MAPLE
+Sample Output: Axxxx
+Sample Input: CABLE APPLE
+Sample Output: xxBxx
+*/
 
 string generate_hint(string actualWord, string guessedWord) {
     srand(time(NULL)); //Using current time for random number generator seed
