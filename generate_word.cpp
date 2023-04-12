@@ -8,6 +8,27 @@
 #include "generate_word.h"
 using namespace std;
 
+/*
+What Is This Function:
+The goal of this function is to generate a random valid
+5 character word. The final output word is all capital.
+The validity of the randomly generated word is checked
+by checking if it exists in the english dictionary file
+called "words_alpha.txt".
+
+Why read the .txt file into a hashtable (dictionary)
+and not just check the words by comparing each 
+word in the .txt file with the generated word?
+Well, comparing the generated word with each 
+line in the .txt file using I/O methods took 
+anywhere from 10-30 seconds to return a value
+while using a hashtable only takes within a
+second or two.
+
+Function Made By:
+Muhammad Shahab Hasan (3035961992)
+*/
+
 string generate_word() {
     string alphabet = "abcdefghijklmnopqrstuvwxyz";
     int i, j;
