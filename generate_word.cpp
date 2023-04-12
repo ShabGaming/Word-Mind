@@ -23,7 +23,10 @@ Well, comparing the generated word with each
 line in the .txt file using I/O methods took 
 anywhere from 10-30 seconds to return a value
 while using a hashtable only takes within a
-second or two.
+second or two. Using a hashtable is not only
+quicker but less memory intensive. Dynamic
+memory management is also used to further
+optimize the function and avoid memory leaks.
 
 Function Made By:
 Muhammad Shahab Hasan (3035961992)
