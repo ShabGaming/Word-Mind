@@ -18,6 +18,9 @@ Sample Input: APPLE MAPLE
 Sample Output: Axxxx
 Sample Input: CABLE APPLE
 Sample Output: xxBxx
+
+Function Made By:
+Muhammad Shahab Hasan (3035961992)
 */
 
 string generate_hint(string actualWord, string guessedWord) {
