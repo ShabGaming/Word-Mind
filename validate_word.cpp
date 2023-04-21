@@ -7,7 +7,9 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <string>
 using namespace std;
+
 
 bool validate_word(string word){
     if (word.length() < 5){
