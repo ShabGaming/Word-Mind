@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "update_profile.h"
 using namespace std;
 int update_profile(string filename, int& puzzle_solved, int& hint_coins, int& hints_used) {
     ifstream file(filename + ".txt");
