@@ -2,6 +2,7 @@
 //It will screen out numbers and words that are too long, too short or does not exists.
 //It will return true if the word is valid and false if the word is invalid
 // coded by Bosco Fung UID:3036059461
+#include "validate_word.h"
 #include <string>
 #include <iostream>
 #include <fstream>
