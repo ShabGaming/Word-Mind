@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include "display_leaderboard.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ bool compareUserData(const UserData& a, const UserData& b) {
     return a.puzzlesSolved > b.puzzlesSolved;
 }
 
-void display_leaderboard() {
+void displayLeaderboard() {
     string folderName = "USERS/";
     vector<UserData> users;
     int count = 0;
@@ -34,5 +35,14 @@ void display_leaderboard() {
         users.push_back(user);
         count++;
         file.close();
+    }
+
+    // Sort users based on puzzles solved
+    sort(users.begin(), users.end(), compareUserData);
+
+    // Display leaderboard
+    cout << "Leaderboard:" << endl;
+    for(int i = 0; i < users.size(); i++) {
+        cout << "#" << i+1 << " " << users[i].name << " \"" << users[i].puzzlesSolved << "\"" << endl;
     }
 }
