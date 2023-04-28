@@ -6,8 +6,9 @@
 #include <string>
 #include "load_profile.h"
 using namespace std;
+
 int load_profile(string filename, int& puzzle_solved, int& hint_coins, int& hints_used) {
-    ifstream file(filename + ".txt");
+    ifstream file("./profiles/" + filename + ".txt");
     if (file.is_open()) {
         string line;
         getline(file, line); 
