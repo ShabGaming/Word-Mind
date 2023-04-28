@@ -1,3 +1,13 @@
+/*
+The goal of this function is to take inputs filename, puzzle_solved, hint_coins, and hints_used and write them to a file.
+It will be written to the respective file in the "profiles" folder. If the file doesn't exist, it will be created (New user).
+
+The function will return 0 if the file was written successfully.
+
+Function Made By:
+Dongwoo Kang (3036029777)
+*/
+
 #include <fstream>
 #include <string>
 #include "edit_profile.h"

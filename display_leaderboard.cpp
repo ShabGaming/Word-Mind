@@ -6,6 +6,16 @@
 
 using namespace std;
 
+/*
+The goal of this function is to output the leaderboard of the game.,
+The leaderboard is displayed from the files in the "porfiles" folder.
+We also use a custom struct to store the user data, allowing easy manuplation.
+The leaderboard is sorted based on the number of puzzles solved.
+
+Function Made By:
+Muhammad Shahab Hasan (3035961992) & Dongwoo Kang (3036029777)
+*/
+
 struct UserData {
     string name;
     int puzzlesSolved;
@@ -18,7 +28,7 @@ bool compareUserData(const UserData& a, const UserData& b) {
 }
 
 void displayLeaderboard() {
-    string folderName = "USERS/";
+    string folderName = "profiles/";
     vector<UserData> users;
     int count = 0;
 

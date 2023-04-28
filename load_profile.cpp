@@ -1,6 +1,8 @@
-//It is an int function which takes the input string as the file name then update the variables.
-//The varibles include number of puzzles solved, hint coins and hint used.
-//If the txt file doesn't exist, the function will return 1.
+// It is an int function which takes the input string as the file name then update the variables.
+// The varibles include number of puzzles solved, hint coins and hint used.
+// If the txt file / user doesn't exist, the function will return 1.
+// Function Made By: Bosco Fung (3036059461)
+
 #include <iostream>
 #include <fstream>
 #include <string>

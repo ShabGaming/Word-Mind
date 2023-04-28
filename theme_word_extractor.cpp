@@ -7,6 +7,16 @@
 #include "theme_word_extractor.h"
 using namespace std;
 
+/*
+The goal of this function is to take a string input and return a random word from the corresponding file.
+The input can be "animals", "color", "countries", "food", or "languages".
+The function returns "Invalid input type" if the input is not one of the five options.
+The function returns "Unable to open file" if the file cannot be opened.
+
+Function Made By:
+Dongwoo Kang (3036029777)
+*/
+
 string theme_word_extractor(string type)
 {
     string filename;
