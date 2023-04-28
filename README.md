@@ -26,19 +26,19 @@ To play the game, the player must guess a five letters and submit their guess. T
 *For a demonstration take a look at this demo video:*
 
 ## Features
-- [ ] Generation of random game sets or events:
+- [x] **Generation of random game sets or events:**
 Our group project involves the implementation of a program that generates random English words from the entire English dictionary. Additionally, we have incorporated a functionality that selects a random theme word from the relevant theme word .txt files.
-- [ ] Data structures for storing game status:
+- [x] **Data structures for storing game status:**
 Our group has made the decision to utilize .txt files to store player profiles, including their name, number of puzzles solved, available hint points, and other stats. Furthermore, we have incorporated custom structs in certain functions to enhance the program's functionality and readability. We have also impelemnted the usage of Hashtables to optimize the speed of program execution for the "word generation" function.
-- [ ] Dynamic memory management:
+- [x] **Dynamic memory management:**
 Our group has skillfully incorporated Dynamic Memory Management in several functions, as well as the main function, to optimize the program's memory usage and prevent memory leaks. This technique has been employed to store guess words, the word to guess, and other relevant data in multiple functions.
-- [ ] File input/output:
+- [x] **File input/output:**
 Our group has successfully integrated file input/output functionality in our game, allowing the program to edit and load their profiles and associated data, such as guess words and hint coins. Additionally, we have incorporated file input in the "random theme word" selection function, enabling the program to access and utilize external data sources.
-- [ ] Program codes in multiple files:
+- [x] **Program codes in multiple files:**
 Our group has adopted a modular approach in our project, dividing it into multiple smaller functions. This approach has allowed us to write more efficient and readable code for the game. By organizing the program's functionality in a modular fashion, we have increased its readabilty, functionality and scalability.
-- [ ] Proper indentation and naming styles:
+- [x] **Proper indentation and naming styles:**
 We have maintained proper indentation and utilized meaningful variable names throughout our project. This ensures that the code is easily readable and understandable for anyone reviewing it.
-- [ ] In-code documentation:
+- [x] **In-code documentation:**
 We added easy to understand readable comments throughout the project to improve code clarity and understandability.
 
 ## Quickstart Guide
