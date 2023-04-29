@@ -1,21 +1,28 @@
-display_word.o : display_word.cpp display_word.h
-	g++ display_word.cpp -c display_word.o
+FLAGS = -pedantic-errors -std=c++11
+OBJS = edit_load_profile.o generate_extract_word.o generate_hint_validate.o instructions_intro_leaderboard.o display_word.o WordMind.o
 
-edit_load_profile.o : edit_load_profile.cpp edit_load_profile.h
-	g++ edit_load_profile -c edit_load_profile.o
+edit_load_profile.o: edit_load_profile.cpp edit_load_profile.h
+	g++ $(FLAGS) -c edit_load_profile.cpp
 
-generate_extract_file.o : generate_extract_file.cpp generate_extract_file.h
-	g++ generate_extract_file.cpp -c generate_extract_file.o
+generate_extract_word.o: generate_extract_word.cpp generate_extract_word.h
+	g++ $(FLAGS) -c generate_extract_word.cpp
 
-generate_hint_validate.o : generate_hint_validate.cpp generate_hint_validate.h
-	g++ generate_hint_validate.cpp -c generate_hint_validate.o
+generate_hint_validate.o: generate_hint_validate.cpp generate_hint_validate.h
+	g++ $(FLAGS) -c generate_hint_validate.cpp
 
 instructions_intro_leaderboard.o: instructions_intro_leaderboard.cpp instructions_intro_leaderboard.h
-	g++ instructions_intro_leaderboard.cpp -c instructions_intro_leaderboard.o
+	g++ $(FLAGS) -c instructions_intro_leaderboard.cpp
 
-WordMind: instructions_intro_leaderboard.o display_word.o edit_load_profile.o generate_extract_file.o generate_hint_validate.o
-	g++ $^ -o $@
+display_word.o: display_word.cpp display_word.h
+	g++ $(FLAGS) -c display_word.cpp
 
+WordMind.o: WordMind.cpp
+	g++ $(FLAGS) -c WordMind.cpp
+
+WordMind: $(OBJS)
+	g++ $(FLAGS) -o WordMind $(OBJS)
+
+# Clean target
 clean:
 	rm -f *.o WordMind
 
