@@ -87,8 +87,8 @@ bool validate_word(string word)
     {
         return true;
     }
-    return true;
     fin.close();
+    return true;
 }
 
 /*
