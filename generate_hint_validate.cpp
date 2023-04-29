@@ -3,7 +3,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
-#include "generate_hint.h"
+#include <fstream>
+#include <sstream>
+#include "generate_hint_validate.h"
 using namespace std;
 
 /*
@@ -38,4 +40,60 @@ string generate_hint(string actualWord, string guessedWord) {
 
     delete hint; // free the allocated memory
 
+}
+
+// This is a function that takes a string input and ensure the word is good for the game.
+// It will screen out numbers and words that are too long, too short or does not exists.
+// It will return true if the word is valid and false if the word is invalid
+//  Function Made By: Bosco Fung (3036059461)
+
+bool validate_word(string word)
+{
+    if (word.length() < 5)
+    {
+        cout << "Insufficient Letters." << endl;
+        return false;
+    }
+    else if (word.length() > 5)
+    {
+        cout << "Too many letters." << endl;
+        return false;
+    }
+    for (int i = 0; i < word.length(); i++)
+    {
+        if (word[i] >= 'a' && word[i] <= 'z')
+        {
+            continue;
+        }
+        else
+        {
+            cout << "Invalid Word, Try Again." << endl;
+            return false;
+        }
+    }
+    ifstream fin("words_alpha.txt");
+    bool found = false;
+    string temp;
+    while (fin >> temp)
+    {
+        if (temp == word)
+        {
+            found = true;
+            break;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    if (found == false)
+    {
+        cout << "Invalid Word, Try Again." << endl;
+        return false;
+    }
+    else if (found == true)
+    {
+        return true;
+    }
+    fin.close();
 }

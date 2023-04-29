@@ -17,3 +17,5 @@ The game offers two modes of play: generic words, which are randomly generated, 
 Thank you for playing! Enjoy!
 
 Are you a first time player?
+1: Yes
+2: No
