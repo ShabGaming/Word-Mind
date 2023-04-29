@@ -1,8 +1,4 @@
-#include <fstream>
-#include <string>
-#include <iostream>
 #include "edit_load_profile.h"
-using namespace std;
 
 /*
 The goal of this function is to take inputs filename, puzzle_solved, hint_coins, and hints_used and write them to a file.

@@ -1,10 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <algorithm>
 #include "instructions_intro_leaderboard.h"
-using namespace std;
 
 /*
 The goal of this function is to take an integer input 1 or 2,

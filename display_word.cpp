@@ -1,8 +1,5 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #include "display_word.h"
-using namespace std;
+
 
 /*
 This is a void function, its goal is to take a 5 character string input and display it in a formatted way. The functions takes 2 string inputs, the first one being the "guessed word" and the second one being "actual word". The function then compares the two strings and displays the guessed word in a formatted way. The function does not return anything. The format is as follows:

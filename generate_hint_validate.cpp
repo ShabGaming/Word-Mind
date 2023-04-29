@@ -1,13 +1,5 @@
-// Importing All The Necessary Libraries
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <cctype>
 #include "generate_hint_validate.h"
-using namespace std;
+
 
 /*
 What Is This Function:

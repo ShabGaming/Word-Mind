@@ -1,14 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cstdlib>
-#include <ctime>
-#include <algorithm>
-#include <unordered_set>
-#include <ctime>
-#include <cctype>
 #include "generate_extract_word.h"
-using namespace std;
 
 /*
 What Is This Function:
