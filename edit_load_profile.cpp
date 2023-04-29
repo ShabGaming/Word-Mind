@@ -10,8 +10,8 @@ Dongwoo Kang (3036029777)
 
 void edit_profile(string filename, int puzzle_solved, int hint_coins, int hints_used) {
     // Open the file for writing
-    ofstream file("profiles/" + filename + ".txt", ios::app);
-    
+    ofstream file("profiles/" + filename + ".txt", ios::out);
+
     // Check if the file was opened successfully
     if (!file.is_open()) {
         // If the file does not exist, create it

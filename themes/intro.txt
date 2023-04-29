@@ -15,7 +15,3 @@ The "Word Mind" game is a terminal-based word-guessing game inspired by the popu
 The objective of the game is to guess a randomly generated five-letter word in six attempts or fewer.
 The game offers two modes of play: generic words, which are randomly generated, and themed words, which are based on specific topics or categories; Color, Countries, Food or Langauges.
 Thank you for playing! Enjoy!
-
-Are you a first time player?
-1: Yes
-2: No

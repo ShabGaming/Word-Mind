@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <dirent.h>
 using namespace std;
 
 void instructions_intro(int input);

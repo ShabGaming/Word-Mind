@@ -1,6 +1,23 @@
 #include "generate_hint_validate.h"
 
 /*
+This function takes a 5 letter word and converts it all to Upper case.
+Sample Input: apple
+Sample Output: APPLE
+
+Function Made By: Muhammad Shahab Hasan (3035961992)
+*/
+
+string convert_to_upper(string word)
+{
+    for (int i = 0; i < word.length(); i++)
+    {
+        word[i] = toupper(word[i]); // converts each character to upper case
+    }
+    return word;
+}
+
+/*
 What Is This Function:
 The goal of this function is to take two "5 character string inputs",
 the first being the actual word (word to guess to win the game), second
@@ -36,72 +53,32 @@ string generate_hint(string actualWord, string guessedWord) {
 
 // This is a function that takes a string input and ensure the word is good for the game.
 // It will screen out numbers and words that are too long, too short or does not exists.
-// It will return true if the word is valid and false if the word is invalid
+// A valid word is 5 characters long, and exists in the dictionary.
+// It will return true if the word is valid and false if the word is invalid.
 //  Function Made By: Bosco Fung (3036059461)
 
-bool validate_word(string word)
-{
-    if (word.length() < 5)
-    {
-        cout << "Insufficient Letters." << endl;
+bool validate_word(string word){
+    if (word.length() != 5){ // Check if the word is 5 characters long
         return false;
     }
-    else if (word.length() > 5)
-    {
-        cout << "Too many letters." << endl;
-        return false;
-    }
-    for (int i = 0; i < word.length(); i++)
-    {
-        if (word[i] >= 'a' && word[i] <= 'z')
-        {
-            continue;
-        }
-        else
-        {
-            cout << "Invalid Word, Try Again." << endl;
+    for (int i = 0; i < word.length(); i++){ // Check if the word contains any numbers
+        if (isdigit(word[i])){
             return false;
         }
     }
-    ifstream fin("words_alpha.txt");
-    bool found = false;
-    string temp;
-    while (fin >> temp)
-    {
-        if (temp == word)
-        {
-            found = true;
-            break;
-        }
-        else
-        {
-            continue;
-        }
-    }
-    if (found == false)
-    {
-        cout << "Invalid Word, Try Again." << endl;
+    ifstream dictionary("themes/words_alpha.txt"); // Open the dictionary file
+    if (dictionary.fail()){ // Check if the file is opened successfully
+        cout << "Unable to open file" << endl;
         return false;
     }
-    else if (found == true)
-    {
-        return true;
+    string line;
+    while (getline(dictionary, line)){ // Read the file line by line
+        // Capatalize the word and the line to ensure the comparison is case insensitive
+        word = convert_to_upper(word);
+        line = convert_to_upper(line);
+        if (line == word){ // Check if the word exists in the dictionary
+            return true;
+        }
     }
-    fin.close();
-    return true;
-}
-
-/*
-This function takes a 5 letter word and converts it all to Upper case.
-Sample Input: apple
-Sample Output: APPLE
-
-Function Made By: Muhammad Shahab Hasan (3035961992)
-*/
-
-string convert_to_upper(string word){
-    for (int i = 0; i < word.length(); i++){
-        word[i] = toupper(word[i]); //converts each character to upper case
-    }
-    return word;
+    return false;
 }

@@ -48,7 +48,7 @@ void display_word(string guessedWord, string actualWord)
             formattedWord[indexes[j] - 1] = '(';
             formattedWord[indexes[j] + 1] = ')';
             if (indexes[j] == 1){
-                firstCharSpace = true;
+                firstCharSpace = false;
             }
         }
     }

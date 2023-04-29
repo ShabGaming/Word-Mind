@@ -78,23 +78,35 @@ void displayLeaderboard()
 {
     string folderName = "profiles/";
     vector<UserData> users;
-    int count = 0;
 
-    // Read user data from files
-    while (true)
+    // Open directory
+    DIR *dir;
+    struct dirent *entry;
+    if ((dir = opendir(folderName.c_str())) != NULL)
     {
-        string fileName = folderName + to_string(count) + ".txt";
-        ifstream file(fileName);
-        if (!file)
+        // Iterate over files in directory
+        while ((entry = readdir(dir)) != NULL)
         {
-            break;
+            // Check if file is a .txt file
+            if (entry->d_type == DT_REG && string(entry->d_name).find(".txt") != string::npos)
+            {
+                // Open file and read user data
+                string fileName = folderName + entry->d_name;
+                ifstream file(fileName);
+                UserData user;
+                getline(file, user.name);
+                file >> user.puzzlesSolved >> user.hintsPoints >> user.hintsUsed;
+                users.push_back(user);
+                file.close();
+            }
         }
-        UserData user;
-        getline(file, user.name);
-        file >> user.puzzlesSolved >> user.hintsPoints >> user.hintsUsed;
-        users.push_back(user);
-        count++;
-        file.close();
+        closedir(dir);
+    }
+    else
+    {
+        // Error opening directory
+        cout << "Error: Could not open directory " << folderName << endl;
+        return;
     }
 
     // Sort users based on puzzles solved
