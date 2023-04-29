@@ -6,6 +6,7 @@
 #include "generate_extract_word.h"
 #include "generate_hint_validate.h"
 #include "instructions_intro_leaderboard.h"
+#include "display_word.h"
 
 using namespace std;
 
@@ -107,7 +108,7 @@ int gameplay(UserData &user)
         cout << "   WORD MIND   " << endl;
         cout << "---------------" << endl;
         for (int j = 0; j <= i; j++){
-            // WIP //
+            display_word(input_word[i], guess_word);
         }
         cout << "---------------" << endl << endl;
         
