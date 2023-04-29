@@ -10,6 +10,6 @@
 using namespace std;
 
 int instructions_intro(int input);
-void display_leaderboard();
+void displayLeaderboard();
 
 #endif

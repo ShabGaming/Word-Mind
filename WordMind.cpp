@@ -35,7 +35,7 @@ int gameplay(UserData &user)
             instructions_intro(2);
             gameplay(user);
         } else if (choice == 2){
-            display_leaderboard();
+            displayLeaderboard();
             gameplay(user);
         } else if (choice == 3){
             cout << "Lets get guessing!" << endl;
