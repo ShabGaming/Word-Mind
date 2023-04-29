@@ -163,6 +163,7 @@ int gameplay(UserData &user)
             return 0;
         }
     }
+    return 0;
 }
 
 // The main function, calls all other functions and runs the game.

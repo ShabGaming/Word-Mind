@@ -9,7 +9,7 @@
 #include <algorithm>
 using namespace std;
 
-int instructions_intro(int input);
+void instructions_intro(int input);
 void displayLeaderboard();
 
 #endif

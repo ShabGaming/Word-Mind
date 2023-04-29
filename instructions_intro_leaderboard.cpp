@@ -12,7 +12,7 @@ Function Made By:
 Muhammad Shahab Hasan (3035961992)
 */
 
-int instructions_intro (int input){
+void instructions_intro(int input){
     if (input == 1){
         string line;
         ifstream file("themes/intro.txt");
@@ -23,7 +23,6 @@ int instructions_intro (int input){
             file.close();
         } else {
             cout << "Unable to open file" << endl;
-            return 0;
         }
     } else if (input == 2){
         string line;
@@ -35,7 +34,6 @@ int instructions_intro (int input){
             file.close();
         } else {
             cout << "Unable to open file" << endl;
-            return 0;
         }
     } else if (input == 2){
         string line;
@@ -47,11 +45,9 @@ int instructions_intro (int input){
             file.close();
         } else {
             cout << "Unable to open file" << endl;
-            return 0;
         }
     } else {
         cout << "Invalid input" << endl;
-        return 0;
     }
 }
 

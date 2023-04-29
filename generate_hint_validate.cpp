@@ -1,6 +1,5 @@
 #include "generate_hint_validate.h"
 
-
 /*
 What Is This Function:
 The goal of this function is to take two "5 character string inputs",
@@ -88,6 +87,7 @@ bool validate_word(string word)
     {
         return true;
     }
+    return true;
     fin.close();
 }
 
