@@ -4,5 +4,6 @@
 
 string generate_hint(string actualWord, string guessedWord);
 bool validate_word(string word);
+string convert_to_upper(string word);
 
 #endif

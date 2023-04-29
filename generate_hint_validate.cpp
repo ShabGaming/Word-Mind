@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <cctype>
 #include "generate_hint_validate.h"
 using namespace std;
 
@@ -96,4 +97,19 @@ bool validate_word(string word)
         return true;
     }
     fin.close();
+}
+
+/*
+This function takes a 5 letter word and converts it all to Upper case.
+Sample Input: apple
+Sample Output: APPLE
+
+Function Made By: Muhammad Shahab Hasan (3035961992)
+*/
+
+string convert_to_upper(string word){
+    for (int i = 0; i < word.length(); i++){
+        word[i] = toupper(word[i]); //converts each character to upper case
+    }
+    return word;
 }
