@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "cctype": "cpp",
-        "ostream": "cpp",
-        "iostream": "cpp",
-        "unordered_set": "cpp",
-        "string": "cpp"
-    }
-}
