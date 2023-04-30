@@ -49,6 +49,8 @@ Ready to play? Getting started is simple. One you have downloaded / cloned the r
 make WordMind
 ./WordMind
 ```
+Do delete the files you may use `make clean`
+
 Thats it! Don't forget to enjoy :smile:
 
 Thanks for playing!!!
