@@ -32,7 +32,7 @@ void display_word(string guessedWord, string actualWord)
             formattedWord[i - 1] = '[';
             formattedWord[i + 1] = ']';
             if (i == 1){
-                firstCharSpace = true;
+                firstCharSpace = false;
             }
             tempActualWord.erase(tempActualWord.find(formattedWord[i]), 1);
         } else {

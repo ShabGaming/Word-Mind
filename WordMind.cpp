@@ -24,7 +24,7 @@ struct UserData
 int gameplay(UserData &user)
 {
     int choice, type;
-    cout << endl << "Please select an option below to get started" << endl;
+    cout << endl << endl << "Please select an option below to get started" << endl;
     cout << "1: Instructions" << endl << "2: Leaderboard" << endl << "3: Play" << endl << "4: Exit" << endl;
     cout << "Enter your choice: ";
     cin >> choice;
@@ -39,17 +39,18 @@ int gameplay(UserData &user)
             cin >> choice;
         }
     } else if (choice == 1){
+        cout << endl;
         instructions_intro(2);
-        return 2;
+        gameplay(user);
     } else if (choice == 2){
         cout << endl << endl;
         displayLeaderboard();
-        return 2;
+        gameplay(user);
     } else if (choice == 3){
         cout << "Lets get guessing!" << endl;
     } else if (choice == 4){
         cout << "Thanks for playing!" << endl;
-        return 0;
+        exit(0);
     }
 
     system("clear"); // Clear screen
@@ -96,7 +97,7 @@ int gameplay(UserData &user)
 
     system("clear"); // Clear screen
     instructions_intro(1);
-
+    cout << endl << "------------------------------------------------------------------------" << endl;
     bool win = false;
     for (int i = 0; i < 6; i++){
         bool valid = false;
@@ -108,6 +109,7 @@ int gameplay(UserData &user)
             cout << "Invalid input. Please input a 5 character english word." << endl;
             cout << "Enter your 5 letter guess: ";
             while (valid == false) {
+                cout << "Enter your 5 letter guess: ";
                 cin >> input_word[i];
                 valid = validate_word(input_word[i]);
                 if (valid == false){
@@ -123,12 +125,15 @@ int gameplay(UserData &user)
                     cout << "Word already guessed. Please try again." << endl;
                     cout << "Enter your 5 letter guess: ";
                     cin >> input_word[i];
-                    while (valid == false) {
-                        cout << "Enter your 5 letter guess: ";
-                        cin >> input_word[i];
-                        valid = validate_word(input_word[i]);
-                        if (valid == false){
-                            cout << "Invalid input. Please input a 5 character english word." << endl;
+                    if (input_word[i] == input_word[j]){
+                        while (valid == false) {
+                            cout << "Enter your 5 letter guess: ";
+                            cin >> input_word[i];
+                            input_word[i] = convert_to_upper(input_word[i]);
+                            valid = validate_word(input_word[i]);
+                            if (valid == false){
+                                cout << "Invalid input. Please input a 5 character english word." << endl;
+                            }
                         }
                     }
                 }
@@ -166,7 +171,7 @@ int gameplay(UserData &user)
                 if (user.hintsPoints == 0){
                     cout << "Sorry, you have no hint points left. You got this!" << endl;
                 } else {
-                    cout << "Here is your hint:" << generate_hint(guess_word, input_word[i]);
+                    cout << "Here is your hint: " << generate_hint(guess_word, input_word[i]);
                     user.hintsPoints -= 1;
                     user.hintsUsed += 1;
                     edit_profile(user.name, user.puzzlesSolved, user.hintsPoints, user.hintsUsed);
@@ -188,6 +193,7 @@ int gameplay(UserData &user)
 
     // Ask user if they want to play again, if yes, call function again, if no, return 0
     cout << "Would you like to play again? " << endl << "1: Yes" << endl << "2: No." << endl;
+    cout << "Enter your choice: ";
     cin >> choice;
     if (choice != 1 && choice != 2){
         while (choice != 1 && choice != 2){
@@ -202,7 +208,7 @@ int gameplay(UserData &user)
         gameplay(user);
     } else if (choice == 2){
         cout << "Thanks for playing! See you soon again :)" << endl;
-        return 0;
+        exit(0);
     }
     return 0;
 }
@@ -244,8 +250,30 @@ int main(){
         if (load == 0){
             cout << endl << "Welcome back, " << user.name << "!" << endl;
         } else if (load == 1){
-            cout << "Sorry, " << user.name << " does not exist. Please try again or create a new profile." << endl;
-            choice = 3;
+            cout << endl << "Sorry, " << user.name << " does not exist. Please try again or create a new profile." << endl;
+            cout << "Would you like to create a new profile?" << endl << "1: Yes" << endl << "2: No" << endl;
+            if (choice != 1 && choice != 2){
+                while (choice != 1 && choice != 2){
+                    if (choice != 1 && choice != 2){
+                        cout << "Invalid choice. 1 for Yes, 2 for No. Please try again." << endl;
+                    }
+                    cout << "Enter your choice: ";
+                    cin >> choice;
+                }
+            }
+            if (choice == 1){
+                cout << "Enter your username: ";
+                cin >> user.name;
+                user.name = convert_to_upper(user.name);
+                edit_profile(user.name, 0, 3, 0); // Create new profile with default values
+                cout << endl << "Welcome, " << user.name << "!" << endl;
+                user.puzzlesSolved = 0;
+                user.hintsPoints = 3;
+                user.hintsUsed = 0;
+            } else if (choice == 2){
+                cout << "Thanks for playing! See you soon again :)" << endl;
+                return 0;
+            }
         }
     }
 
