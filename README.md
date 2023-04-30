@@ -44,3 +44,11 @@ We have maintained proper indentation and utilized meaningful variable names thr
 We added easy to understand readable comments throughout the project to improve code clarity and understandability.
 
 ## Quickstart Guide
+Ready to play? Getting started is simple. One you have downloaded / cloned the repository write the following commands:
+```
+make WordMind
+./WordMind
+```
+Thats it! Don't forget to enjoy :smile:
+
+Thanks for playing!!!
