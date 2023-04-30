@@ -23,7 +23,12 @@ Please go through the information down below to learn more about the project and
 The "Word Mind" game is a terminal-based word-guessing game inspired by the popular game "Wordle". The objective of the game is to guess a randomly generated five-letter word in six attempts or fewer. The game offers two modes of play: generic words, which are randomly generated, and themed words, which are based on specific topics or categories; Color, Countries, Food or Langauges.
 
 ### Gameplay & Rules
-To play the game, the player must guess a five letters and submit their guess. The game then reveals which of the chosen letters are in the target word and whether they are in the correct position. The player can use this information to refine their guess for the next attempt. The game ends when the player correctly guesses the target word or exhausts all six attempts. The game also features a hint system, which allows the player to receive a clue for the target word. First time player receives three hint points, and they earn an additional hint point every time they fail to guess the target word. The player can use a hint point to reveal one letter of the target word, which can help narrow down the possibilities for their next guess.
+To play the game, the player must guess a five letters and submit their guess. The game then reveals which of the chosen letters are in the target word and whether they are in the correct position.
+```
+( ) Represents the letter is in the word but not in the correct position
+[ ] Represents the letter is in the word and in the correct position
+```
+The player can use this information to refine their guess for the next attempt. The game ends when the player correctly guesses the target word or exhausts all six attempts. The game also features a hint system, which allows the player to receive a clue for the target word. First time player receives three hint points, and they earn an additional hint point every time they fail to guess the target word. The player can use a hint point to reveal one letter of the target word, which can help narrow down the possibilities for their next guess.
 
 *For a demonstration take a look at this demo video:*
 
