@@ -192,7 +192,7 @@ int gameplay(UserData &user)
     }
 
     // Ask user if they want to play again, if yes, call function again, if no, return 0
-    cout << "Would you like to play again? " << endl << "1: Yes" << endl << "2: No." << endl;
+    cout << "Would you like to play again? " << endl << "1: Yes" << endl << "2: No" << endl;
     cout << "Enter your choice: ";
     cin >> choice;
     if (choice != 1 && choice != 2){
@@ -216,7 +216,7 @@ int gameplay(UserData &user)
 
 // The main function, calls all other functions and runs the game.
 int main(){
-    UserData user;
+    UserData* user = new UserData;
     system("clear"); // Clear screen
     instructions_intro(1); // Display Introduction & Ask if new user or not
     cout << endl << "Are you a first time player?" << endl << "1: Yes" << endl << "2: No" << endl;
@@ -235,22 +235,22 @@ int main(){
     }
     if (choice == 1){
         cout << "Enter your username: ";
-        cin >> user.name;
-        user.name = convert_to_upper(user.name);
-        edit_profile(user.name, 0, 3, 0); // Create new profile with default values
-        cout << endl << "Welcome, " << user.name << "!" << endl;
-        user.puzzlesSolved = 0;
-        user.hintsPoints = 3;
-        user.hintsUsed = 0;
+        cin >> user->name;
+        user->name = convert_to_upper(user->name);
+        edit_profile(user->name, 0, 3, 0); // Create new profile with default values
+        cout << endl << "Welcome, " << user->name << "!" << endl;
+        user->puzzlesSolved = 0;
+        user->hintsPoints = 3;
+        user->hintsUsed = 0;
     } else if (choice == 2){
         cout << "Please enter your username: ";
-        cin >> user.name;
-        user.name = convert_to_upper(user.name);
-        int load = load_profile(user.name, user.puzzlesSolved, user.hintsPoints, user.hintsUsed); // Load profile and store data in struct
+        cin >> user->name;
+        user->name = convert_to_upper(user->name);
+        int load = load_profile(user->name, user->puzzlesSolved, user->hintsPoints, user->hintsUsed); // Load profile and store data in struct
         if (load == 0){
-            cout << endl << "Welcome back, " << user.name << "!" << endl;
+            cout << endl << "Welcome back, " << user->name << "!" << endl;
         } else if (load == 1){
-            cout << endl << "Sorry, " << user.name << " does not exist. Please try again or create a new profile." << endl;
+            cout << endl << "Sorry, " << user->name << " does not exist. Please try again or create a new profile." << endl;
             cout << "Would you like to create a new profile?" << endl << "1: Yes" << endl << "2: No" << endl;
             if (choice != 1 && choice != 2){
                 while (choice != 1 && choice != 2){
@@ -263,28 +263,31 @@ int main(){
             }
             if (choice == 1){
                 cout << "Enter your username: ";
-                cin >> user.name;
-                user.name = convert_to_upper(user.name);
-                edit_profile(user.name, 0, 3, 0); // Create new profile with default values
-                cout << endl << "Welcome, " << user.name << "!" << endl;
-                user.puzzlesSolved = 0;
-                user.hintsPoints = 3;
-                user.hintsUsed = 0;
+                cin >> user->name;
+                user->name = convert_to_upper(user->name);
+                edit_profile(user->name, 0, 3, 0); // Create new profile with default values
+                cout << endl << "Welcome, " << user->name << "!" << endl;
+                user->puzzlesSolved = 0;
+                user->hintsPoints = 3;
+                user->hintsUsed = 0;
             } else if (choice == 2){
                 cout << "Thanks for playing! See you soon again :)" << endl;
+                delete user; // Free dynamically allocated memory
                 return 0;
             }
         }
     }
 
     // If gameplay returns 0, The user wants to end the program. It returns 1 if the user wants to play again.
-    run = gameplay(user);
+    run = gameplay(*user);
     if (run == 0){
+        delete user; // Free dynamically allocated memory
         return 0;
     } else if (run == 1){
         system("clear"); // Clear screen
-        gameplay(user);
+        gameplay(*user);
     } else if (run == 2){
-        gameplay(user);
+        gameplay(*user);
     }
+    delete user; // Free dynamically allocated memory
 }
