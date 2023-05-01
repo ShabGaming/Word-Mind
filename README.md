@@ -31,6 +31,7 @@ To play the game, the player must guess a five letters and submit their guess. T
 The player can use this information to refine their guess for the next attempt. The game ends when the player correctly guesses the target word or exhausts all six attempts. The game also features a hint system, which allows the player to receive a clue for the target word. First time player receives three hint points, and they earn an additional hint point every time they fail to guess the target word. The player can use a hint point to reveal one letter of the target word, which can help narrow down the possibilities for their next guess.
 
 *For a demonstration take a look at this demo video:*
+https://www.youtube.com/watch?v=JcRAUca1T7g
 
 ## Features
 - [x] **:space_invader: Generation of random game sets or events:**
