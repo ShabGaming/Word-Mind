@@ -1,4 +1,4 @@
-# HKU COMP2113 Group Project | Group 96
+# HKU COMP2113 Group Project
 GitHub Repository For COMP2113 Group Project (From COMP2113, The University of Hong Kong): "Implementing a text-based mini-game of our own choice"
 
 **Group Members:**
