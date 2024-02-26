@@ -1,5 +1,5 @@
-# COMP2113 Group Project | Group 96
-Github Repositary For COMP2113 Group Project: "Implementing a text-based mini-game of our own choice"
+# HKU COMP2113 Group Project | Group 96
+GitHub Repository For COMP2113 Group Project (From COMP2113, The University of Hong Kong): "Implementing a text-based mini-game of our own choice"
 
 **Group Members:**
 - Muhammad Shahab Hasan (BASc Applied AI)
