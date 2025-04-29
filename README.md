@@ -1,18 +1,5 @@
 # HKU COMP2113 Group Project
 GitHub Repository For COMP2113 Group Project (From COMP2113, The University of Hong Kong): "Implementing a text-based mini-game of our own choice"
-
-**Group Members:**
-- Muhammad Shahab Hasan (BASc Applied AI)
-  - shahab@connect.hku.hk
-  - 3035961992
-
-- Bosco Fung (BASc Applied AI)
-  - bfung777@connect.hku.hk
-  - 3036059461
-  
-- Dongwoo Kang (BEng DS&E)
-  - u3602977@connect.hku.hk
-  - 3036029777
   
 Please go through the information down below to learn more about the project and how to get started!
 -----
